@@ -1,0 +1,84 @@
+
+{% extends base_template %}
+
+
+{% block head %}
+    {{ super() }}
+    <style>
+
+
+
+        .month-container {
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .month-box {
+            box-sizing: border-box;
+            width: calc(100% / 12 - 12px);
+            padding: 10px;
+            border: 1px solid #000;
+            text-align: center;
+            margin-bottom: 10px;
+            min-width: 0;
+            flex-shrink: 1;
+        }
+    </style>
+{% endblock %}
+
+
+{% block content%}
+    <h1>Garden Guide for Zone {{ zone }}</h1>
+
+        <h2>{{ plant["plant-info"]["common-name"].title() }}</h2>
+        <i><b>{{ plant["plant-info"]["latin-name"] }}</b></i>
+        <p>{{ plant["plant-info"]["plant-description"] }}</p>
+
+
+        <h4>Quick Info</h4>
+        <ul>
+            <li>Soil: {{ plant["planting-details"]["soil"] }}</li>
+            <li>Water: {{ plant["planting-details"]["water"] }}</li>
+            <li>Light: {{ plant["planting-details"]["sun"] }}</li>
+            <li>Sowing Method: {{ plant["planting-details"]["sowing-method"] }}</li>
+            <li>Growing Days: {{ plant["planting-details"]["grow-days"] }}</li>
+        </ul>
+
+        <h4>Sowing Months</h4>
+
+        <div class="month-container">
+            {% for month in ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'] %}
+                {% if month in plant["planting-details"]["sowing-months"] %}
+                    <div class="month-box" style="background-color: green;">{{ month[:3] }}</div>
+                {% else %}
+                    <div class="month-box">{{ month[:3] }}</div>
+                {% endif %}
+            {% endfor %}
+        </div>
+
+        <h4>Harvest Months</h4>
+
+        <div class="month-container">
+            {% for month in ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'] %}
+                {% if month in plant["planting-details"]["harvest-months"] %}
+                    <div class="month-box" style="background-color: orange;">{{ month[:3] }}</div>
+                {% else %}
+                    <div class="month-box">{{ month[:3] }}</div>
+                {% endif %}
+            {% endfor %}
+        </div>
+
+        <h4>Planting Instructions</h4>
+        <p>Planting Instructions: {{ plant["planting-details"]["planting-instructions"] }}</p>
+        
+        
+
+        <h4>Harvest Instructions</h4>
+        <p>Harvest Instructions: {{ plant["planting-details"]["harvest-instructions"] }}</p>
+
+        <hr>
+
+    {% endblock %}    
+

@@ -1,0 +1,14 @@
+{% extends base_template %}
+
+{% block head %}
+    {{ super() }}
+
+{% endblock %}
+
+{% block content%}
+
+    {% for link in linklist %}
+        <a href="{{ linklist[link] }}">{{ link }}</a>
+    {% endfor %}
+
+{% endblock %}  
