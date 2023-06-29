@@ -45,11 +45,14 @@
 {% endblock %}
 
 {% block content%}
-
+    <h1>Garden Guide for Zone 8b</h1>
+    <p>This site is full of guides for growing plants in your garden in US Plant Hardiness Zone 8b. The information is generated then is cleaned and curated by humans.</p>
     <div class="linklist-box">
     {% for link in linklist %}
         <a class='plantlink' href="{{ linklist[link] }}">{{ link.title() }}</a>
     {% endfor %}
     </div>
+    <a style="margin: auto; display: block; text-align: center;" href='https://ko-fi.com/A0A8MQBNV' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://storage.ko-fi.com/cdn/kofi2.png?v=3' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
+    <hr>
+{% endblock %}
 
-{% endblock %}  
