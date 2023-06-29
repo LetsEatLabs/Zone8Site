@@ -80,6 +80,9 @@ if __name__ == "__main__":
         fname = file.removesuffix('.html')
         listlink[fname] = f"html/{file}"
 
+    # Alphabatize the linklist by key
+    listlink = dict(sorted(listlink.items()))
+
     # Create the index.html file
     with open(f"index.html", 'w') as fh:
         fh.write(index_template.render(base_template=base_template, linklist=listlink))

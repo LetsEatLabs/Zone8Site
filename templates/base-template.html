@@ -2,11 +2,16 @@
 <html lang="en">
 <head>
     {% block head %}
-    <link rel="stylesheet" href="style.css" />
+        <link rel="stylesheet" href="style.css" />
     {% endblock %}
+
 </head>
 <body>
     <a href="/">Home</a>
+    <br>
+    <br>
     <div id="content">{% block content %}{% endblock %}</div>
+
+    <i style="text-align: center; margin: auto; display: block;" class="footer">(C) 2023. A Let's Eat Labs service</i>
 </body>
 </html>
