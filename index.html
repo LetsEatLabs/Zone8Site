@@ -11,20 +11,36 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
-            max-width: 1200px;
+            padding: 10px;
             margin: 0 auto;
         }
 
         .plantlink {
             box-sizing: border-box;
-            width: calc(100% / 12 - 12px);
+            max-width: 120px;
             padding: 10px;
             border: 1px solid #000;
             border-radius: 5px;
             text-align: center;
             margin-bottom: 10px;
+            display: block;
             min-width: 0;
             flex-shrink: 1;
+            padding-right: 5px;
+            padding-left: 5px;
+        }
+
+        @media (min-width: 600px) {
+        .linklist-box {
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .plantlink {
+            width: calc(50% - 12px);
+            min-width: 0;
+            flex-shrink: 1;
+        }
         }
 
     </style>
@@ -78,7 +94,7 @@
     
         <a class='plantlink' href="html/thyme.html">Thyme</a>
     
-        <a class='plantlink' href="html/tomatill.html">Tomatill</a>
+        <a class='plantlink' href="html/tomatillo.html">Tomatillo</a>
     
         <a class='plantlink' href="html/tomato.html">Tomato</a>
     
