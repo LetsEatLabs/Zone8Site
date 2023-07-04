@@ -61,7 +61,7 @@ def sanitize_json(data):
             except (TypeError, json.JSONDecodeError):
                 # If it's a non-string value or not a valid JSON string, continue
                 pass
-                
+
     return data
 
 
@@ -85,12 +85,13 @@ def get_plant_data(plant_name, zone) -> str:
 
 if __name__ == "__main__":
     # Get arguments
-    
+
     zone = sys.argv[1]
     plants = sys.argv[2].split(",")
 
     for plant in plants:
         plant_data = get_plant_data(plant, zone)
+        #plant_data = sanitize_json(plant_data)
         plant_data = json.loads(plant_data)
 
         with open(f"{plant}.json", "w") as f:
