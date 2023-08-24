@@ -85,7 +85,6 @@ def get_plant_data(plant_name, zone) -> str:
 
 if __name__ == "__main__":
     # Get arguments
-
     zone = sys.argv[1]
     plants = sys.argv[2].split(",")
 
